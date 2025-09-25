@@ -4,7 +4,7 @@
 Genomic prediction has emerged as a powerful tool with applications spanning human disease risk assessment and plant/animal breeding. Kolmogorov–Arnold networks (KANs) have risen as a potential substitute for multilayer perceptrons within dense fully connected networks. Substantial efforts have been dedicated to incorporating KANs into diverse deep learning frameworks in computer vision and natural language processing. However, the integration of KANs into deep learning models for genomic prediction remains unexplored. Here, we present KANG2P, a novel method designed to enhance genomic prediction accuracy. We extensively evaluated KANG2P on diverse datasets, including ALS and Parkinson's disease, as well as maize and rice datasets. In classification and regression tasks, KANG2P demonstrated superior performance compared to existing methods. By integrating both genotype and predicted expression data, KANG2P leverages a unique architecture to better capture complex genetic patterns. We also propose an explainable approach for spline functions to identify disease-related functional genes. Our results highlight KANG2P's potential to advance research and applications in both biomedical and agricultural fields.
 
 ## **workflow of KANG2P**
-![image](https://github.com/RayLing88/KANG2P_test/blob/master/img/KANG2P_workflow.png)
+![image](https://github.com/LuoGroup2023/KANG2P/blob/main/img/KANG2P_workflow_v2.png)
 
 ## **Installation and dependencies**
 - Linux OS; GPU hardware support
