@@ -3,7 +3,7 @@
 ## **Abstract**
 Genomic prediction has emerged as a powerful tool with applications spanning human disease risk assessment and plant/animal breeding. Kolmogorov–Arnold networks (KANs) have risen as a potential substitute for multilayer perceptrons within dense fully connected networks. Substantial efforts have been dedicated to incorporating KANs into diverse deep learning frameworks in computer vision and natural language processing. However, the integration of KANs into deep learning models for genomic prediction remains unexplored. Here, we present KANG2P, a novel method designed to enhance genomic prediction accuracy. We extensively evaluated KANG2P on diverse datasets, including ALS and Parkinson's disease, as well as maize and rice datasets. In classification and regression tasks, KANG2P demonstrated superior performance compared to existing methods. By integrating both genotype and predicted expression data, KANG2P leverages a unique architecture to better capture complex genetic patterns. We also propose an explainable approach for spline functions to identify disease-related functional genes. Our results highlight KANG2P's potential to advance research and applications in both biomedical and agricultural fields.
 
-## **workflow of KANG2P**
+## **Workflow of KANG2P**
 ![image](https://github.com/LuoGroup2023/KANG2P/blob/main/img/KANG2P_workflow_v2.png)
 
 ## **Installation and dependencies**
@@ -14,7 +14,7 @@ Genomic prediction has emerged as a powerful tool with applications spanning hum
 
 No need to install the source code. Dependencies can be installed with a few minutes.
 
-## Imputing gene expression levels
+## Predicting gene expression levels
 - For Diseases, run_PrediXcan.sh could be used to predict gene expression levels. In the run_PrediXcan.sh shell script, [MetaXcan](https://github.com/hakyimlab/MetaXcan) was called upon.
 - For plant, SNP2Expression_v1.0.R could be used to build gene expression levels prediction models for each gene.
 - VisualizeSNP2ExpressionAcc.R script was designed to visualize of the accuracy for gene-expression prediction models.
@@ -27,7 +27,7 @@ No need to install the source code. Dependencies can be installed with a few min
 - For Diseases, Within the DiseaseKANG2P folder, the DualOmicsModel.py can be used to train the KANG2P model.
 - For Plant regression task, Within the PlantKANG2P folder, the DualOmicsModel.py can be used to train the KANG2P model.
 
-## Predict
+## Predict phenotype
 - For Diseases, Within the DiseaseKANG2P folder, the Predict.py script can be used to make prediction.
 - For Plant, Within the PlantKANG2P folder, the Predict.py script can be used to make prediction.
 
