@@ -1,0 +1,34 @@
+# Protected or large data
+data/
+checkpoints/
+outputs/
+tools/annovar/
+*.bed
+*.bim
+*.fam
+*.vcf
+*.vcf.gz
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.npy
+*.npz
+
+# Runtime artifacts
+*.log
+*.pid
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.Rhistory
+.RData
+
+# Editor/OS
+.DS_Store
+.idea/
+.vscode/
