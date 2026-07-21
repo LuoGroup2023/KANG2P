@@ -32,3 +32,6 @@ venv/
 .DS_Store
 .idea/
 .vscode/
+
+# Local archive (kept on disk, not published)
+legacy/

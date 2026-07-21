@@ -69,11 +69,7 @@ workflows/
 
 docs/                               data contracts, provenance and reproducibility
 requirements/                       Python and external dependency notes
-legacy/                             original public-repository implementation
 ```
-
-The original public code is retained under `legacy/` for provenance. New
-experiments should use the numbered workflows.
 
 ## Workflow guide
 
@@ -363,12 +359,11 @@ harmonization, and failed-model allow-list.
 Human PE likewise depends on externally obtained MetaXcan/PrediXcan model
 databases and compatible genome-build resources.
 
-## Provenance and legacy code
+## Provenance
 
 The mapping from audited source files to the reorganized workflows is recorded
-in [docs/code_map.md](docs/code_map.md). The former public layout is preserved
-under [legacy/](legacy/README.md), including the original project description
-and implementation artifacts.
+in [docs/code_map.md](docs/code_map.md). New experiments should use the
+numbered workflows and their documented input/output contracts.
 
 ## Intended use
 

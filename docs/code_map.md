@@ -15,5 +15,3 @@ trees. This table records provenance.
 | Comparison / traditional plant GS | `Plant/Script/runG2P_nestedCV.R` and `runTreeGS_NestedCV.py` | renamed and grouped under the comparison workflow |
 | DualKAN gated fusion | `DualKAN/DualOmicsModel01.py`, `KAN.py`, launcher, aggregator | portable names, paths, and Fourier/spline head selection |
 | Human gradients | `Disease/KAN/G2P/als_g*_interpretability.py` | grouped dependencies and portable defaults |
-
-The former public GitHub layout is preserved under `legacy/`.
