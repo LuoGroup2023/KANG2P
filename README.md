@@ -41,7 +41,7 @@ workflows/
 ├── 05_comparison_experiments/      shared outer-fold baseline comparisons
 │   ├── disease_capsule/            DiseaseCapsule nested CV
 │   └── traditional_ml/             disease classifiers + plant GS baselines
-├── 06_dualkan_gated_fusion/        G+PE DualKAN crop prediction
+├── 06_Train_phenotype_prediction_model/  G+PE DualKAN phenotype prediction
 └── 07_human_gradient_analysis/     human G and G+PE attribution analyses
 
 docs/                               data contracts, provenance and reproducibility
@@ -57,7 +57,7 @@ requirements/                       Python and external dependency notes
 | [03. Predicted proteome](workflows/03_predicted_proteome/README.md) | per-sample protein predictions, optional model allow-list | aligned and QC-filtered PP matrix, transform metadata | Prepare a genetically predicted protein state for downstream comparison |
 | [04. Crop predicted expression](workflows/04_crop_predicted_expression/README.md) | crop PLINK files, GFF3, observed expression, target FAM | predicted crop PE, gene-level R2/MSE/SCC | Learn cis-genetic expression models and transfer them to target crop samples |
 | [05. Comparison experiments](workflows/05_comparison_experiments/README.md) | aligned G/PE/PP, labels or traits, predefined folds | fold predictions, selected parameters, metrics | Compare DiseaseCapsule and conventional baselines under matched evaluation |
-| [06. Train_phenotype_prediction_model](workflows/06_dualkan_gated_fusion/README.md) | crop G, crop PE, quantitative traits | fold predictions/metrics, tuning history, top-k feature counts, checkpoints | Learn nonlinear G+PE representations and modality interactions |
+| [06. Train_phenotype_prediction_model](workflows/06_Train_phenotype_prediction_model/README.md) | crop G, crop PE, quantitative traits | fold predictions/metrics, tuning history, top-k feature counts, checkpoints | Learn nonlinear G+PE representations and modality interactions with DualKAN gated fusion |
 | [07. Human gradient analysis](workflows/07_human_gradient_analysis/README.md) | trained human models, G and PE matrices | feature/gene rankings from gradient, IG, LIME and weights | Trace phenotype predictions back to genotype components and genes |
 
 ## What “genetically anchored molecular-state learning” means
@@ -239,7 +239,7 @@ SPLIT_DIR=/secure/AD/cv_splits_5fold \
 bash workflows/03_predicted_proteome/run_pp_nested_cv.sh
 ```
 
-### 6. DualKAN gated fusion
+### 6. Train phenotype prediction model
 
 ```bash
 DATA_ROOT=/secure/plant \
@@ -247,7 +247,7 @@ TASK_LIST=Rice18K:Grain_yield \
 GPU_LIST=0 \
 HEAD_TYPE=fourier \
 N_TRIALS=12 \
-bash workflows/06_dualkan_gated_fusion/run_all_crops.sh
+bash workflows/06_Train_phenotype_prediction_model/run_all_crops.sh
 ```
 
 Remove `TASK_LIST` to run the configured Maize1404, Rice1495, and Rice18K trait

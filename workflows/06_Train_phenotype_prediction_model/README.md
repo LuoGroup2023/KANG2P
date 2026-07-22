@@ -1,6 +1,7 @@
-# 06. DualKAN gated fusion
+# 06. Train phenotype prediction model
 
-The model has independent genotype and predicted-expression encoders,
+The DualKAN gated-fusion phenotype-prediction model has independent genotype
+and predicted-expression encoders,
 learnable modality gates, interaction features, reconstruction losses, and a
 spline or Fourier KAN prediction head. Feature selection and scaling are fit
 inside training folds.

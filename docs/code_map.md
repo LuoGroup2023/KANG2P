@@ -13,5 +13,5 @@ trees. This table records provenance.
 | Comparison / DiseaseCapsule | duplicated `Disease/Capsule/{4.23,AD5.9}/.../capsnet_nested_cv.py` | consolidated G/PE/PP loader and fold-safe inner preprocessing |
 | Comparison / traditional disease ML | duplicated `Disease/ML/{4.23,AD5.9}/...` scripts | one multimodal CLI with preprocessing inside `GridSearchCV` |
 | Comparison / traditional plant GS | `Plant/Script/runG2P_nestedCV.R` and `runTreeGS_NestedCV.py` | renamed and grouped under the comparison workflow |
-| DualKAN gated fusion | `DualKAN/DualOmicsModel01.py`, `KAN.py`, launcher, aggregator | portable names, paths, and Fourier/spline head selection |
+| Train phenotype prediction model (DualKAN gated fusion) | `DualKAN/DualOmicsModel01.py`, `KAN.py`, launcher, aggregator | portable names, paths, and Fourier/spline head selection |
 | Human gradients | `Disease/KAN/G2P/als_g*_interpretability.py` | grouped dependencies and portable defaults |
