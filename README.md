@@ -1,12 +1,10 @@
-# KANG2P
-
-> **KANG2P enables interpretable genotype-to-phenotype prediction through genetically anchored molecular-state learning.**
+# KANG2P enables interpretable genotype-to-phenotype prediction through genetically anchored molecular-state learning
 
 KANG2P is a research framework for learning phenotypes from inherited genetic
 variation together with molecular states predicted from that variation. It
 connects genotype preprocessing, genetically predicted gene expression,
-predicted protein abundance, nested-cross-validation benchmarks, DualKAN
-gated fusion, and gradient-based interpretation in one auditable workflow.
+predicted protein abundance, nested-cross-validation benchmarks, Kolmogorov-Arnold Network
+based phenotype prediction, and gradient-based interpretation in one auditable workflow.
 
 The central idea is to represent an individual with complementary layers:
 
@@ -26,14 +24,11 @@ features and reduces ambiguity about how they were derived.
 
 ![KANG2P workflow](KANG2P_workflow_v4.png)
 
-There are two related analysis paths:
+**Module 1: Reconstruction of genetically regulated molecular states**
 
-1. **Human disease prediction:** preprocess genotype, infer tissue-specific
-   expression and/or protein abundance, compare DiseaseCapsule and traditional
-   classifiers using identical outer folds, and interpret G or G+PE models.
-2. **Crop genomic prediction:** learn cis-genetic expression models from
-   observed crop expression, predict PE in the target population, compare
-   conventional genomic-prediction baselines, and train DualKAN on G+PE.
+**Module 2: Modality-specific representation learning**
+
+**Module 3: KAN-based phenotype prediction and interpretation**
 
 ## Repository organization
 
@@ -62,7 +57,7 @@ requirements/                       Python and external dependency notes
 | [03. Predicted proteome](workflows/03_predicted_proteome/README.md) | per-sample protein predictions, optional model allow-list | aligned and QC-filtered PP matrix, transform metadata | Prepare a genetically predicted protein state for downstream comparison |
 | [04. Crop predicted expression](workflows/04_crop_predicted_expression/README.md) | crop PLINK files, GFF3, observed expression, target FAM | predicted crop PE, gene-level R2/MSE/SCC | Learn cis-genetic expression models and transfer them to target crop samples |
 | [05. Comparison experiments](workflows/05_comparison_experiments/README.md) | aligned G/PE/PP, labels or traits, predefined folds | fold predictions, selected parameters, metrics | Compare DiseaseCapsule and conventional baselines under matched evaluation |
-| [06. DualKAN gated fusion](workflows/06_dualkan_gated_fusion/README.md) | crop G, crop PE, quantitative traits | fold predictions/metrics, tuning history, top-k feature counts, checkpoints | Learn nonlinear G+PE representations and modality interactions |
+| [06. Train_phenotype_prediction_model](workflows/06_dualkan_gated_fusion/README.md) | crop G, crop PE, quantitative traits | fold predictions/metrics, tuning history, top-k feature counts, checkpoints | Learn nonlinear G+PE representations and modality interactions |
 | [07. Human gradient analysis](workflows/07_human_gradient_analysis/README.md) | trained human models, G and PE matrices | feature/gene rankings from gradient, IG, LIME and weights | Trace phenotype predictions back to genotype components and genes |
 
 ## What “genetically anchored molecular-state learning” means
@@ -340,23 +335,3 @@ harmonization, and failed-model allow-list.
 
 Human PE likewise depends on externally obtained MetaXcan/PrediXcan model
 databases and compatible genome-build resources.
-
-## Provenance
-
-The mapping from audited source files to the reorganized workflows is recorded
-in [docs/code_map.md](docs/code_map.md). New experiments should use the
-numbered workflows and their documented input/output contracts.
-
-## Intended use
-
-KANG2P is research software for reproducible method development and evaluation.
-Human disease predictions and feature rankings are not clinical diagnoses and
-must not be interpreted as evidence of causality without independent genetic,
-functional, and experimental validation.
-
-Questions and reproducible bug reports can be submitted through this
-repository's [GitHub Issues](https://github.com/LuoGroup2023/KANG2P/issues).
-
-## License
-
-See [LICENSE](LICENSE).
