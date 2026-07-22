@@ -22,27 +22,9 @@ biologically interpretable gene and protein features. Genetic anchoring does
 not by itself establish causality; it defines the provenance of the molecular
 features and reduces ambiguity about how they were derived.
 
-## Conceptual workflow
+## KANG2P workflow
 
-```mermaid
-flowchart LR
-    A[Raw genotype] --> B[QC and fold-safe genotype processing]
-    B --> G[Genotype features G]
-    B --> HPE[Human PrediXcan expression PE]
-    B --> PP[Externally weighted predicted proteome PP]
-    B --> CPE[Crop cis-elastic-net expression PE]
-    E[Observed crop expression] --> CPE
-
-    G --> C[Comparison experiments]
-    HPE --> C
-    PP --> C
-    G --> D[DualKAN gated fusion]
-    CPE --> D
-
-    C --> Y[Phenotype prediction]
-    D --> Y
-    Y --> I[Gradient, IG, LIME and gene-level interpretation]
-```
+![KANG2P workflow](KANG2P_workflow_v4.png)
 
 There are two related analysis paths:
 
@@ -330,7 +312,7 @@ used or referenced the following resources:
 
 - ALS data from [Project MinE](https://www.projectmine.com), with controlled
   dbGaP study accession `phs003146.v1.p1`;
-- Parkinson's disease data under dbGaP accession `phs000918.v1.p1`;
+- The data of AD was downloaded from dbGaP Study `phs000168.v2.p2`;
 - the Rice18K/NAM variation resource on
   [Figshare](https://figshare.com/articles/dataset/NAM_variations/19166475);
 - the Rice1495 hybrid-line resource from
