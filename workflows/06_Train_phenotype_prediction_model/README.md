@@ -6,7 +6,7 @@ learnable modality gates, interaction features, reconstruction losses, and a
 spline or Fourier KAN prediction head. Feature selection and scaling are fit
 inside training folds.
 
-## Bundled reviewer demo
+## Demo data
 
 From the repository root, run the core model on the included synthetic data:
 

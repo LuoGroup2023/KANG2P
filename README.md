@@ -152,7 +152,7 @@ requires the `G2P` package.
 External software, genetic model databases, annotations, model weights, and
 controlled cohort data are not vendored in this repository.
 
-## Reviewer demo (bundled synthetic data)
+## Demo data
 
 A small deterministic dataset is included under
 [`demo_data/plant/Rice18K`](demo_data/plant/Rice18K). It contains 60 synthetic
