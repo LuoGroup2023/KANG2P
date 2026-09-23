@@ -45,6 +45,7 @@ workflows/
 └── 07_human_gradient_analysis/     human G and G+PE attribution analyses
 
 docs/                               data contracts, provenance and reproducibility
+demo_data/                          small synthetic reviewer dataset
 requirements/                       Python and external dependency notes
 ```
 
@@ -150,6 +151,55 @@ requires the `G2P` package.
 
 External software, genetic model databases, annotations, model weights, and
 controlled cohort data are not vendored in this repository.
+
+## Reviewer demo (bundled synthetic data)
+
+A small deterministic dataset is included under
+[`demo_data/plant/Rice18K`](demo_data/plant/Rice18K). It contains 60 synthetic
+samples, 20 genotype features, 10 genetically anchored predicted-expression
+features, one quantitative trait, and five predefined outer folds. The demo
+requires no controlled-access data, external model database, or GPU.
+
+After installing the Python dependencies, run the following command from the
+repository root:
+
+```bash
+pip install -r requirements/dualkan.txt
+```
+
+**Estimated installation time:** about 5–15 minutes on a typical Linux
+workstation with a stable broadband connection and prebuilt Python wheels;
+allow 15–30 minutes on a slower connection. PyTorch is the largest dependency
+and usually accounts for most of the download time. An environment with these
+packages already installed or cached is typically ready in under a minute.
+This estimate excludes building packages from source, which can take
+substantially longer.
+
+Then execute the smoke test:
+
+```bash
+python workflows/06_Train_phenotype_prediction_model/dualkan_gated_fusion.py \
+  --data_root demo_data/plant \
+  --datasets Rice18K \
+  --trait Rice18K:Grain_yield \
+  --output_dir outputs/reviewer_demo \
+  --device cpu \
+  --disable_amp \
+  --force_random_search \
+  --head_type fourier \
+  --smoke
+```
+
+The bounded smoke run uses the first outer fold, two inner folds, one
+hyperparameter trial, one final model, and at most two training epochs. Key
+results are written to
+`outputs/reviewer_demo/Rice18K/Grain_yield/dualkan_fold_metrics.csv` and
+`outputs/reviewer_demo/Rice18K/Grain_yield/dualkan_predictions.csv`.
+
+The bundled values are simulated and intended only to verify installation,
+data loading, fold-safe preprocessing, model training, prediction, and output
+generation. They are not suitable for biological interpretation. The files
+and their schema are described in [`demo_data/README.md`](demo_data/README.md).
 
 ## Quick start
 

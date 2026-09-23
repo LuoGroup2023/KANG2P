@@ -23,6 +23,8 @@ data/
 checkpoints/
 └── human/ALS/
 outputs/
+demo_data/
+└── plant/Rice18K/                 synthetic reviewer fixture
 ```
 
 ## Human predicted-expression inputs
@@ -62,6 +64,8 @@ reject out-of-range indices and train/test overlap.
 Each crop directory contains `X.txt` for genotype, `Exp.txt` or `PE.txt` for
 predicted expression, phenotype tables, and ID-based outer-fold files. The
 first column is the sample ID; remaining columns are numeric features.
+The same contract is illustrated by the bundled synthetic fixture under
+[`demo_data/plant/Rice18K`](../demo_data/plant/Rice18K).
 
 ## Files excluded from Git
 
